@@ -1,0 +1,8 @@
+<launch>
+
+    <node name="gazebo" pkg="gazebo_ros" type="gazebo"
+    args="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/worlds/turtlebot3_house.world" respawn="false"
+    output="screen" />
+
+    <include file="$(find swarm_nav_inter_iit)/launch/swarm.launch" />
+</launch>
