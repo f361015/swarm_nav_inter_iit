@@ -5,7 +5,7 @@
     <group ns="robot1">
         <param name="tf_prefix" value="robot1"/>
         <include file="$(find swarm_nav_inter_iit)/launch/single.launch" >
-            <arg name="init_pose" value="-x 6 -y -1 -z 0" />
+            <arg name="init_pose" value="-x -1 -y 4.5 -z 0" />
             <arg name="model" value="waffle_pi" />
             <arg name="multi_robot_name" value="robot1" />
         </include>
@@ -15,7 +15,7 @@
     <group ns="robot2">
         <param name="tf_prefix" value="robot2"/>
         <include file="$(find swarm_nav_inter_iit)/launch/single.launch" >
-            <arg name="init_pose" value="-x 5 -y 1 -z 0" />
+            <arg name="init_pose" value="-x -1 -y 3.5 -z 0" />
             <arg name="model" value="waffle_pi" />
             <arg name="multi_robot_name" value="robot2" />
         </include>
@@ -25,7 +25,7 @@
     <group ns="robot3">
         <param name="tf_prefix" value="robot3"/>
         <include file="$(find swarm_nav_inter_iit)/launch/single.launch" >
-            <arg name="init_pose" value="-x -2 -y 1 -z 0" />
+            <arg name="init_pose" value="-x -1 -y 2.5 -z 0" />
             <arg name="model" value="waffle_pi" />
             <arg name="multi_robot_name" value="robot3" />
         </include>
@@ -35,7 +35,7 @@
     <group ns="robot4">
         <param name="tf_prefix" value="robot4"/>
         <include file="$(find swarm_nav_inter_iit)/launch/single.launch" >
-            <arg name="init_pose" value="-x -7 -y -1 -z 0" />
+            <arg name="init_pose" value="-x -1 -y 1.5 -z 0" />
             <arg name="model" value="waffle_pi" />
             <arg name="multi_robot_name" value="robot4" />
         </include>
