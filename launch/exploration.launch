@@ -2,10 +2,7 @@
     <param name="/use_sim_time" value="true"/>
   <!-- Arguments -->
   <arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
-  <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
   <arg name="sensor_range" default="1.0"/>
-  <arg name="cmd_vel_topic" default="/cmd_vel" />
-  <arg name="odom_topic" default="odom" />
 
 <group ns="robot1">
   <node pkg="explore_lite" type="explore" respawn="false" name="explore" output="screen">
