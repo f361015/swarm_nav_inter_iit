@@ -1,0 +1,3 @@
+trash_can 1 2
+table -2.5 2.5
+bookshelf -6.5 4.5

@@ -1,9 +1,9 @@
 <launch>
     <param name="/use_sim_time" value="true"/>
 
-     <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find swarm_nav_inter_iit)/turtlebot3/turtlebot3_navigation/maps/map.yaml">
+     <node name="map_server" pkg="map_server" type="map_server" args="$(find swarm_nav_inter_iit)/turtlebot3/turtlebot3_navigation/maps/map.yaml">
         <param name="frame_id" value="map"/>
-    </node> --> 
+    </node>
 
     <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot1.launch" />
     <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot2.launch" />

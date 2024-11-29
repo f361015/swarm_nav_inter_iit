@@ -1,0 +1,4 @@
+table
+trash_can
+bookshelf 
+trash_can
