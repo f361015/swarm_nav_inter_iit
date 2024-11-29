@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import rospy
 import actionlib
 
@@ -40,8 +41,11 @@ def main():
   global taskLocations
 
   n = 4
-  taskL = open('task_locations.txt', "r").readlines()
-  taskQueue = open('task_queue.txt', "r").read().split()
+  
+  script_dir = os.path.dirname(os.path.abspath(__file__))
+  
+  taskL = open(os.path.join(script_dir, 'task_locations.txt'), "r").readlines()
+  taskQueue = open(os.path.join(script_dir, 'task_queue.txt'), "r").read().split()
   taskLocations = {}
   for i in taskL:
     tmp = i.split()
