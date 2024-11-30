@@ -1,3 +1,24 @@
+# Centralized Intelligence for Dynamic Swarm Navigation (BharatForge)
+
+**Problem Statement**
+
+The problem focuses on designing a Singular Brain for a robot swarm tasked with performing optimized path planning in highly dynamic environments. The challenges involve developing and training a multi-agent system capable of navigating in environments where:
+* **No GPS** is available.
+* **Frequent and unpredictable changes occur**, such as moving obstacles or rearranged objects.
+
+The robot swarm must collaboratively plan the optimal path to accomplish a set of tasks while avoiding collisions and delays. Efficiency is critical, requiring:
+* Dynamic **ranking of navigation tasks** based on travel time.
+* **Memory persistence**, where robots label and store dynamic changes in the environment in a shared, continuously updating database.
+  
+The ideal solution should be:
+* **Scalable**, maintaining efficiency even in new, larger environments with additional robots.
+* **Adaptable**, enabling the swarm to autonomously explore any environment and create a dynamic database/map of object locations without manual intervention.
+
+The ultimate objective is to develop a software solution capable of ensuring optimal swarm performance, even under highly dynamic and complex conditions.
+
+![Screenshot from 2024-12-01 00-40-41](https://github.com/user-attachments/assets/e269155c-7f04-4f04-aa6a-09f65ffe2236)
+
+***
 First make sure you have installed all the dependencies and the required packages for this project... i.e
 1. **gazebo** (For simulation)
 2. **rviz** (For visualization)
@@ -8,7 +29,9 @@ First make sure you have installed all the dependencies and the required package
 7. **map_merge** (To merge maps; _make sure to have good odometry before trying this_)
 8. **explore_lite** (If you want to explore)
    
-Don't worry, if you forget to install the dependency then ros will notify you after which you can install that specfic file. (_Note that due to us not managing the package.xml and CMakeLists.txt, using rosdep might not work_)
+Don't worry, if you forget to install the dependency then ros will notify you after which you can install that specfic file.
+> [!NOTE]
+> Due to us not managing the package.xml and CMakeLists.txt, using `rosdep` might not work.
 
 Then, clone this repo in a workspace's src folder.
 ```
@@ -34,9 +57,11 @@ $ roslaunch swarm_nav_inter_iit navigation.launch
 ```
 In order to run any python script in the simulation do-
 ```
-$ rosrun swarm_nav_inter_iit roomba.py
+$ rosrun swarm_nav_inter_iit task_allocator.py
 ```
-Here roomba.py is a test file which produces a motion while detecting obstacles for individual robots independently.
+You can change the locations of the tasks in `task_locations.txt` and the task queue in `task_queue.txt` both of which are in the 'scripts' folder.
+
+Here roomba.py is a test file which produces a  random motion while detecting obstacles for individual robots independently.
 
 By deafult, the simulation opens with a premade map for the pre-loaded house map, However there are many different worlds provided by the turtlebot3 package which we have used extensively for using their "Waffle_Pi" robot model and their inbuilt environments. The map is by default saved in the map folder of the turtlebot3_navigation folder but it can be stored anywhere, you just need to chage the launch files accordingly.
 
@@ -51,3 +76,32 @@ For eg. if you don't want to load a preloaded map then you can the comment the m
         <param name="frame_id" value="map"/>
 </node> -->
 ```
+
+This will give map to the `/map` topic in gazebo.
+
+To add and remove robots from the environment you'll have to copy and paste this in the `swarm.launch` with the appropriate number.
+
+Note that we are using turtlebot3 extensively but with enough changes you can make it so that it incorporates any robot you want.
+
+> [!IMPORTANT]
+> Keep the initial namespace as 'robot' and the numbers increasing because the python script assumes the robots are named as "robot1", "robot2" etc...
+
+```xml
+    <group ns="robot5">
+        <param name="tf_prefix" value="robot2"/>
+        <include file="$(find swarm_nav_inter_iit)/launch/single.launch" >
+            <arg name="init_pose" value="-x -1 -y 3.5 -z 0" />
+            <arg name="model" value="waffle_pi" />
+            <arg name="multi_robot_name" value="robot5" />
+        </include>
+    </group>
+```
+Then configure `move_base` and `amcl` launch files for every robot in the corresponding folder by which you can configure ther parameters, namespaces etc. Then add the includes in the `navigation.launch` file.
+```xml
+<include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot5.launch" />
+
+<include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot5.launch"/>
+```
+
+By default, the `costmap_common_params` are stored in `turtlebot3/turtlebot3_navigation/param/cost_common_params` folder.
+***
