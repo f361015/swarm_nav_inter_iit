@@ -28,7 +28,12 @@ First make sure you have installed all the dependencies and the required package
 6. **move_base** (For navigation and both local and global path planning)
 7. **map_merge** (To merge maps; _make sure to have good odometry before trying this_)
 8. **explore_lite** (If you want to explore)
-   
+
+The Python dependencies for running the YOLO model can be installed by:
+```
+pip install ultralytics opencv-python numpy
+```
+
 Don't worry, if you forget to install the dependency then ros will notify you after which you can install that specfic file.
 > [!NOTE]
 > Due to us not managing the package.xml and CMakeLists.txt, using `rosdep` might not work.
