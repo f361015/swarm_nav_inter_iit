@@ -1,7 +1,7 @@
 <launch>
     <param name="/use_sim_time" value="true"/>
     <node name="gazebo" pkg="gazebo_ros" type="gazebo"
-    args="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/worlds/turtlebot3_house.world" respawn="false"
+    args="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/worlds/warehouse.world" respawn="false"
     output="screen" />
 
     <include file="$(find swarm_nav_inter_iit)/launch/swarm.launch" />

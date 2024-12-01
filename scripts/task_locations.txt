@@ -1,3 +1,9 @@
-trash_can 1 2
-table -2.5 2.5
-bookshelf -6.5 4.5
+trash_can_1 18 9.3
+trash_can_2 26.5 1.6
+computer_table_1 19 21.85
+computer_table_2 25 46
+stack_1 0.5 34.3
+boxes_1 4.5 -7
+boxes_2 16.5 -8
+forklift_1 6 11.6
+forklift_2 -1.5 26.6

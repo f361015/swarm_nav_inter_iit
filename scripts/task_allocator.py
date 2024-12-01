@@ -40,7 +40,7 @@ class moveBaseClient:
 def main():
   global taskLocations
 
-  n = 4
+  n = 9   #'''PUT THE NO OF ROBOTS HERE'''
   
   script_dir = os.path.dirname(os.path.abspath(__file__))
   

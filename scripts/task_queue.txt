@@ -1,4 +1,9 @@
-table
-trash_can
-bookshelf 
-trash_can
+boxes_2
+boxes_1
+forklift_1
+trash_can_1
+forklift_2
+computer_table_1
+trash_can_2
+computer_table_2
+stack_1

@@ -1,19 +1,29 @@
 <launch>
     <param name="/use_sim_time" value="true"/>
 
-     <node name="map_server" pkg="map_server" type="map_server" args="$(find swarm_nav_inter_iit)/turtlebot3/turtlebot3_navigation/maps/map.yaml">
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find swarm_nav_inter_iit)/turtlebot3/turtlebot3_navigation/maps/warehouse.yaml"> 
         <param name="frame_id" value="map"/>
-    </node>
+    </node> -->
 
     <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot1.launch" />
     <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot2.launch" />
     <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot3.launch" />
     <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot4.launch" />
+    <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot5.launch" />
+    <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot6.launch" />
+    <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot7.launch" />
+    <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot8.launch" />
+    <include file="$(find swarm_nav_inter_iit)/launch/amcl_swarm/amcl_robot9.launch" />
 
     <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot1.launch"/>
     <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot2.launch"/>
     <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot3.launch"/>
     <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot4.launch"/>
+    <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot5.launch"/>
+    <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot6.launch"/>
+    <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot7.launch"/>
+    <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot8.launch"/>
+    <include file="$(find swarm_nav_inter_iit)/launch/move_base_swarm/move_base_robot9.launch"/>
 
     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find swarm_nav_inter_iit)/turtlebot3/turtlebot3_navigation/rviz/turtlebot3_navigation.rviz"/>
 </launch>

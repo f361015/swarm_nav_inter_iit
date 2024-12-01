@@ -12,36 +12,81 @@
     <include file="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/launch/multi_turtlebot3_slam.launch">
         <arg name="ns" value="robot4"/>
     </include>
+    <include file="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="robot5"/>
+    </include>
+    <include file="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="robot6"/>
+    </include>
+    <include file="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="robot7"/>
+    </include>
+    <include file="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="robot8"/>
+    </include>
+    <include file="$(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/launch/multi_turtlebot3_slam.launch">
+        <arg name="ns" value="robot9"/>
+    </include>
 
-    <arg name="first_tb3"  default="robot1"/>
-  <arg name="second_tb3" default="robot2"/>
-  <arg name="third_tb3"  default="robot3"/>
-  <arg name="fourth_tb3"  default="robot4"/>
-
-  <group ns="$(arg first_tb3)/map_merge">
-    <param name="init_pose_x"   value="-1"/>
-    <param name="init_pose_y"   value="4.5"/>
+  <group ns="robot1/map_merge">
+    <param name="init_pose_x"   value="15"/>
+    <param name="init_pose_y"   value="-3"/>
     <param name="init_pose_z"   value="0"/>
     <param name="init_pose_yaw" value="0"  />
   </group>
 
-  <group ns="$(arg second_tb3)/map_merge">
-    <param name="init_pose_x"   value="-1"/>
-    <param name="init_pose_y"   value="3.5"/>
+  <group ns="robot2/map_merge">
+    <param name="init_pose_x"   value="-2"/>
+    <param name="init_pose_y"   value="-4"/>
     <param name="init_pose_z"   value="0"/>
     <param name="init_pose_yaw" value="0"  />
   </group>
 
-  <group ns="$(arg third_tb3)/map_merge">
+  <group ns="robot3/map_merge">
     <param name="init_pose_x"   value="-1"/>
-    <param name="init_pose_y"   value="2.5"/>
+    <param name="init_pose_y"   value="12"/>
     <param name="init_pose_z"   value="0"/>
     <param name="init_pose_yaw" value="0"  />
   </group>
 
-  <group ns="$(arg fourth_tb3)/map_merge">
+  <group ns="robot4/map_merge">
+    <param name="init_pose_x"   value="12"/>
+    <param name="init_pose_y"   value="12"/>
+    <param name="init_pose_z"   value="0"/>
+    <param name="init_pose_yaw" value="0"  />
+  </group>
+
+  <group ns="robot5/map_merge">
     <param name="init_pose_x"   value="-1"/>
-    <param name="init_pose_y"   value="1.5"/>
+    <param name="init_pose_y"   value="20"/>
+    <param name="init_pose_z"   value="0"/>
+    <param name="init_pose_yaw" value="0"  />
+  </group>
+
+  <group ns="robot6/map_merge">
+    <param name="init_pose_x"   value="12"/>
+    <param name="init_pose_y"   value="23"/>
+    <param name="init_pose_z"   value="0"/>
+    <param name="init_pose_yaw" value="0"  />
+  </group>
+
+  <group ns="robot7/map_merge">
+    <param name="init_pose_x"   value="26"/>
+    <param name="init_pose_y"   value="8"/>
+    <param name="init_pose_z"   value="0"/>
+    <param name="init_pose_yaw" value="0"  />
+  </group>
+
+  <group ns="robot8/map_merge">
+    <param name="init_pose_x"   value="26"/>
+    <param name="init_pose_y"   value="38"/>
+    <param name="init_pose_z"   value="0"/>
+    <param name="init_pose_yaw" value="0"  />
+  </group>
+
+  <group ns="robot9/map_merge">
+    <param name="init_pose_x"   value="5"/>
+    <param name="init_pose_y"   value="46"/>
     <param name="init_pose_z"   value="0"/>
     <param name="init_pose_yaw" value="0"  />
   </group>
@@ -60,10 +105,17 @@
   </node>
 </group>
 
-  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_$(arg first_tb3)_tf_broadcaster"  args="0 0 0 0 0 0 map $(arg first_tb3)/map"/>
-  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_$(arg second_tb3)_tf_broadcaster" args="0 0 0 0 0 0 map $(arg second_tb3)/map"/>
-  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_$(arg third_tb3)_tf_broadcaster" args="0 0 0 0 0 0 map $(arg third_tb3)/map"/>
-  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_$(arg fourth_tb3)_tf_broadcaster" args="0 0 0 0 0 0 map $(arg fourth_tb3)/map"/>
+
+<node pkg="tf" type="static_transform_publisher" name="map_merged_tf" args="-20 -20 0 0 0 0 map_merge/map map 100" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot1_tf_broadcaster" args="0 0 0 0 0 0 map robot1/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot2_tf_broadcaster" args="0 0 0 0 0 0 map robot2/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot3_tf_broadcaster" args="0 0 0 0 0 0 map robot3/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot4_tf_broadcaster" args="0 0 0 0 0 0 map robot4/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot5_tf_broadcaster" args="0 0 0 0 0 0 map robot5/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot6_tf_broadcaster" args="0 0 0 0 0 0 map robot6/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot7_tf_broadcaster" args="0 0 0 0 0 0 map robot7/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot8_tf_broadcaster" args="0 0 0 0 0 0 map robot8/map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot9_tf_broadcaster" args="0 0 0 0 0 0 map robot9/map"/>
 
     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find swarm_nav_inter_iit)/turtlebot3_simulations/turtlebot3_gazebo/rviz/multi_turtlebot3_slam.rviz"/>
 </launch>
