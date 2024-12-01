@@ -118,4 +118,10 @@ The followings are Trimmed and Sped up demonstrations of the videos uploaded in 
 https://github.com/user-attachments/assets/58d6ab63-5afa-4efe-b3c2-dea5efaf7688
 
 
-* Envir
+* Environment- Warehouse ; Robots- 9 ; Exploring map in via `explore_lite` and `map_merge`
+
+
+https://github.com/user-attachments/assets/611cfb48-2eff-464d-ba3a-ed47551ca513
+
+
+* 
