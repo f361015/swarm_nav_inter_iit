@@ -112,6 +112,13 @@ By default, the `costmap_common_params` are stored in `turtlebot3/turtlebot3_nav
 ***
 ## Demonstrations
 The followings are Trimmed and Sped up demonstrations of the videos uploaded in `DEMO_VIDEOS`:
+
+* Environment- House ; Robots- 4 ; Expolring map autonomously
+
+
+https://github.com/user-attachments/assets/70404d48-629c-46f0-a625-c3d2ac16b919
+
+
 * Environment- House ; Robots- 4 ; Naviagting tasks in `task_queue`
 
 
@@ -124,4 +131,4 @@ https://github.com/user-attachments/assets/58d6ab63-5afa-4efe-b3c2-dea5efaf7688
 https://github.com/user-attachments/assets/611cfb48-2eff-464d-ba3a-ed47551ca513
 
 
-* 
+* Environment- Warehouse ; Robots- 9 ; Navigating tasks in `task_queue.txt` and `YOLO` Detection
