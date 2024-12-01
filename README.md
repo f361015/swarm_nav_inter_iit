@@ -1,6 +1,6 @@
 # Centralized Intelligence for Dynamic Swarm Navigation (BharatForge)
 
-**Problem Statement**
+## Problem Statement
 
 The problem focuses on designing a Singular Brain for a robot swarm tasked with performing optimized path planning in highly dynamic environments. The challenges involve developing and training a multi-agent system capable of navigating in environments where:
 * **No GPS** is available.
@@ -19,6 +19,7 @@ The ultimate objective is to develop a software solution capable of ensuring opt
 ![Screenshot from 2024-12-01 00-40-41](https://github.com/user-attachments/assets/e269155c-7f04-4f04-aa6a-09f65ffe2236)
 
 ***
+## How to run this package?
 First make sure you have installed all the dependencies and the required packages for this project... i.e
 1. **gazebo** (For simulation)
 2. **rviz** (For visualization)
@@ -109,13 +110,46 @@ Then configure `move_base` and `amcl` launch files for every robot in the corres
 ```
 
 By default, the `costmap_common_params` are stored in `turtlebot3/turtlebot3_navigation/param/cost_common_params` folder.
+
+In order to turn on YOLO at any stage of running this, just run the `yolo.py` script
+```
+$ rosrun swarm_nav_inter_iit yolo.py
+```
+
+The processed images are published in the `/robot{id}/camera/rgb/image_processed` topic
+
+
+https://github.com/user-attachments/assets/3b133f1e-d37c-439a-83b6-19b495bc9729
+
+
+> [!NOTE]
+> Here we are using the `yolo11n.pt` weights, you can use others as well.
+
 ***
 ## Demonstrations
 The followings are Trimmed and Sped up demonstrations of the videos uploaded in `DEMO_VIDEOS`:
+
+* Environment- House ; Robots- 4 ; Expolring map autonomously
+
+
+https://github.com/user-attachments/assets/70404d48-629c-46f0-a625-c3d2ac16b919
+
+
 * Environment- House ; Robots- 4 ; Naviagting tasks in `task_queue`
 
 
 https://github.com/user-attachments/assets/58d6ab63-5afa-4efe-b3c2-dea5efaf7688
 
 
-* Envir
+* Environment- Warehouse ; Robots- 9 ; Exploring map in via `explore_lite` and `map_merge`
+
+
+https://github.com/user-attachments/assets/611cfb48-2eff-464d-ba3a-ed47551ca513
+
+
+* Environment- Warehouse ; Robots- 9 ; Navigating tasks in `task_queue.txt` and `YOLO` Detection
+
+
+https://github.com/user-attachments/assets/c47c89de-f278-48f2-8568-1d9182d71b0a
+
+
