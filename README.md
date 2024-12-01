@@ -118,8 +118,12 @@ $ rosrun swarm_nav_inter_iit yolo.py
 
 The processed images are published in the `/robot{id}/camera/rgb/image_processed` topic
 
+
+https://github.com/user-attachments/assets/3b133f1e-d37c-439a-83b6-19b495bc9729
+
+
 > [!NOTE]
-> Here we are using the `yolo11s.pt` weights, you can use others as well.
+> Here we are using the `yolo11n.pt` weights, you can use others as well.
 
 ***
 ## Demonstrations
@@ -144,3 +148,8 @@ https://github.com/user-attachments/assets/611cfb48-2eff-464d-ba3a-ed47551ca513
 
 
 * Environment- Warehouse ; Robots- 9 ; Navigating tasks in `task_queue.txt` and `YOLO` Detection
+
+
+https://github.com/user-attachments/assets/c47c89de-f278-48f2-8568-1d9182d71b0a
+
+
