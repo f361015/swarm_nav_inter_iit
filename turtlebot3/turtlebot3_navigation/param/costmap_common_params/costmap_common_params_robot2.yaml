@@ -15,5 +15,5 @@ observation_sources: scan
 scan: {sensor_frame: robot2/base_scan, data_type: LaserScan, topic: /robot2/scan, marking: true, clearing: true}
 
 global_frame: map
-robot_base_frame: /rosbot2/base_link
+robot_base_frame: /robot2/base_link
 always_send_full_costmap: true
