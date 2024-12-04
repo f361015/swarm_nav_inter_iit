@@ -129,7 +129,7 @@ https://github.com/user-attachments/assets/3b133f1e-d37c-439a-83b6-19b495bc9729
 ## Demonstrations
 The followings are Trimmed and Sped up demonstrations of the videos uploaded in `DEMO_VIDEOS`:
 
-* Environment- House ; Robots- 4 ; Expolring map autonomously
+* Environment- House ; Robots- 4 ; Exploring map autonomously
 
 
 https://github.com/user-attachments/assets/70404d48-629c-46f0-a625-c3d2ac16b919
