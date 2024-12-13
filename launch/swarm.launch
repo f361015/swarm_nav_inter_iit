@@ -51,7 +51,7 @@
     </group>
 
 
-    <group ns="robot6">
+    <!-- <group ns="robot6">
         <param name="tf_prefix" value="robot6"/>
         <include file="$(find swarm_nav_inter_iit)/launch/single.launch" >
             <arg name="init_pose" value="-x 12 -y 23 -z 0" />
@@ -89,5 +89,5 @@
             <arg name="multi_robot_name" value="robot9" />
         </include>
     </group>
-
+	-->
 </launch>

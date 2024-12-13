@@ -12,7 +12,7 @@ bridge = CvBridge()
 
 class IMGRec:
     def __init__(self,FOV_X=62.2, FOV_Y=48.8):
-        self.model =  YOLO("./src/swarm_nav_inter_iit/scripts/yolo11n.pt",verbose=False)
+        self.model =  YOLO("./Workspaces/catkin_ws/src/swarm_nav_inter_iit/scripts/yolo11n.pt",verbose=False)
         self.FOV_X = FOV_X
         self.FOV_Y = FOV_Y
 
@@ -62,7 +62,7 @@ class Listener:
 
 if __name__=="__main__":
     rospy.init_node("yolo")
-    for i in range(1,10):
+    for i in range(1,6):
         Listener(i)
     rospy.spin()
 
