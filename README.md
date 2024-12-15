@@ -1,5 +1,9 @@
 # Centralized Intelligence for Dynamic Swarm Navigation (BharatForge)
 
+This Project was made under a week for an Inter IIT TechMeet 13.0 Robotics Problem Statement
+
+_Apologies if the project is a bit wonky, it was my first time with ros, robotics and this field in general. Plus, its highly unlikely that I'll keep updating this repository but I will polish it up for github once the event is over._
+
 ## Problem Statement
 
 The problem focuses on designing a Singular Brain for a robot swarm tasked with performing optimized path planning in highly dynamic environments. The challenges involve developing and training a multi-agent system capable of navigating in environments where:
